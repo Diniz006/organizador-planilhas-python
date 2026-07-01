@@ -5,11 +5,16 @@ def organizar_planilha(arquivo_entrada, arquivo_saida):
     # Lê a planilha bagunçada
     planilha = pd.read_excel(arquivo_entrada)
 
+    linhas_antes = len(planilha)
+
     print("PLANILHA ORIGINAL")
     print(planilha)
 
     # Remove linhas completamente vazias
     planilha = planilha.dropna(how="all")
+
+    linhas_depois = len(planilha)
+    linhas_removidas = linhas_antes - linhas_depois
 
     # Padroniza os nomes das colunas
     planilha.columns = planilha.columns.str.strip().str.lower().str.replace(" ", "_")
@@ -38,7 +43,14 @@ def organizar_planilha(arquivo_entrada, arquivo_saida):
     print("PLANILHA LIMPA")
     print(planilha)
     print("-" * 50)
-    print(f"Arquivo {arquivo_saida} criado com sucesso!")
+
+    print("Planilha organizada com sucesso!")
+    print()
+    print("Resumo:")
+    print(f"- Linhas antes da limpeza: {linhas_antes}")
+    print(f"- Linhas depois da limpeza: {linhas_depois}")
+    print(f"- Linhas removidas: {linhas_removidas}")
+    print(f"- Arquivo gerado: {arquivo_saida}")
 
 
 organizar_planilha("clientes_baguncados.xlsx", "clientes_organizados.xlsx")
