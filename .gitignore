@@ -1,0 +1,13 @@
+# Arquivos de planilha usados apenas para teste
+*.xlsx
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Ambientes virtuais
+venv/
+.env/
+
+# Configurações locais do VS Code
+.vscode/
