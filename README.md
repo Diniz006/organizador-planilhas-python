@@ -32,6 +32,7 @@ Depois da execução, os dados ficam padronizados e prontos para análise ou uso
 - Corrige telefones para formato de texto
 - Gera uma nova planilha organizada
 - Exibe no terminal a planilha original e a planilha limpa
+- Exibe um resumo no terminal com a quantidade de linhas antes e depois da limpeza
 
 ## Estrutura esperada
 
